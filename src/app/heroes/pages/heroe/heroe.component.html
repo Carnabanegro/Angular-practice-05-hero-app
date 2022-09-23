@@ -1,1 +1,26 @@
-<p>heroe works!</p>
+<h3><strong> Informacion de Heroe </strong>:</h3>
+<hr> 
+
+<mat-grid-list cols="1" *ngIf="!heroe; else divHeroe">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divHeroe>
+    <div fxLayout="row" fxLayoutAlign="center" >
+
+        <div fxFlex="20">
+    
+          <app-heroe-card [heroe]="heroe"></app-heroe-card>
+      
+        </div>
+
+    
+    </div>
+</ng-template>
+
+
+
+
+

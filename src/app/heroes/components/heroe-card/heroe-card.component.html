@@ -1,0 +1,23 @@
+<mat-card *ngIf="heroe">
+    <mat-card-title-group>
+      <mat-card-title><strong>{{heroe.superhero}}</strong></mat-card-title>
+      <mat-card-subtitle>{{heroe.alter_ego}}</mat-card-subtitle>
+    
+    </mat-card-title-group>
+    <img mat-card-image [src]="heroe | imagen" >
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item> <strong>Publisher</strong>: {{heroe.publisher}} </mat-list-item>
+        <mat-list-item> <strong>First Appearance</strong>: {{heroe.first_appearance}} </mat-list-item>
+        <mat-list-item> <strong>Characters</strong>: {{"Bruce Wayne"}} </mat-list-item>
+      </mat-list>
+
+
+    <div fxLayout="column" fxLayoutGap="5px">
+      <button  mat-raised-button color="primary" [routerLink]="['/heroes',heroe.id]">Ver mas...</button>
+      <button mat-raised-button color="accent" [routerLink]="['/heroes/editar',heroe.id]">Editar</button>
+    </div>
+     
+
+    </mat-card-content>
+  </mat-card>

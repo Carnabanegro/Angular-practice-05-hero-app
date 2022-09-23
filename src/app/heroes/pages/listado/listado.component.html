@@ -1,1 +1,15 @@
-<p>listado works!</p>
+<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="24px grid"  >
+
+    <div fxFlex="25" fxFlex.lt-xl="40" fxFlex.lt-md="80" *ngFor="let heroe of heroes">
+
+      <app-heroe-card [heroe]="heroe"></app-heroe-card>
+  
+    </div>
+
+</div>
+    
+
+
+
+
+

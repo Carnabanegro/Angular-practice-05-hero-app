@@ -1,1 +1,94 @@
-<p>agregar works!</p>
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="24px grid">
+
+    <div fxLayout="column" fxFlex="50">
+        
+            <div 
+                fxLayout="row" 
+                fxLayoutGap="8px"
+                fxLayout.lt-md="column"
+            >
+                
+                    <mat-form-field appearance="fill" fxFlex="100">
+                      <mat-label>Nombre del heroe</mat-label>
+                      <input 
+                        matInput type="text" 
+                        [(ngModel)]="heroe.superhero" 
+                        required>
+
+                      <mat-hint>Required</mat-hint>
+                    </mat-form-field>
+                
+                
+                    <mat-form-field appearance="fill" fxFlex="100">
+                      <mat-label>Indentidad secreta</mat-label>
+                      <input 
+                        matInput type="text" 
+                        [(ngModel)]="heroe.alter_ego" 
+                        required>
+                      <mat-hint>Required</mat-hint>
+                    </mat-form-field>
+            
+
+            </div>
+
+            <mat-form-field appearance="fill" fxFlex="100">
+                <mat-label>Personajes</mat-label>
+                <input 
+                  matInput type="text" 
+                  [(ngModel)]="heroe.characters" 
+                  required>
+                <mat-hint>Required</mat-hint>
+              </mat-form-field>
+            
+          
+         
+            <mat-form-field appearance="fill" fxFlex="100">
+              <mat-label>Primera aparicion</mat-label>
+              <input 
+                matInput type="text" 
+                [(ngModel)]="heroe.first_appearance" 
+                required>
+              <mat-hint>Required</mat-hint>
+            </mat-form-field>
+       
+     
+        
+
+            <mat-form-field appearance="fill" fxFlex="100">
+                <mat-label>Creador</mat-label>
+
+                <mat-select>
+                    <mat-option *ngFor="let opcion of opciones" [(ngModel)]="heroe.publisher" [value]="opcion.id">{{opcion.descrip}}</mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="8px">
+                <mat-form-field appearance="fill" fxFlex="100">
+                    <mat-label>Image</mat-label>
+                    <input 
+                        matInput 
+                        type="url" 
+                        [(ngModel)]="heroe.alt_img" >
+                    <mat-hint>Optional</mat-hint>
+                </mat-form-field>
+      
+                  <button mat-raised-button color="accent" (click)="guardar()">Subir</button>
+
+                  <button mat-raised-button color="warn" (click)="borrar()">Borrar</button>
+                
+            </div>
+
+
+           <!--AGREGAR DIALOG PARA ASEGURARSE QUE QUIERA BORRAR-->
+           <!--AGREGAR SNACKBAR PARA AVISAR ACCION POR MENSAJE EMERGENTE-->
+       
+    
+    </div>
+
+    <div fxFlex="50">
+          <img [src]="heroe | imagen" alt="hereo.superhero">
+    </div>
+
+    
+</div>

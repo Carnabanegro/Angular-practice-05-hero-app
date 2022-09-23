@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Heroe } from '../../interfaces/heroe.interface';
+import { HeroesService } from '../../services/heroes.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-listado',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
-  constructor() { }
+  heroes : Heroe[] = []
 
-  ngOnInit(): void {
+  constructor(private heroesService : HeroesService) { }
+
+  ngOnInit() {
+
+      this.heroesService.getHeroes().subscribe((resp:Heroe[]) => {
+        
+        this.heroes = resp;
+
+      })
   }
 
 }
