@@ -1,11 +1,41 @@
 
-    <mat-grid-list cols="12" >
-        <mat-grid-tile >
+<div fxLayout="row" fxLayoutAlign="center center" class="container">
 
-            <button (click)="logear()">Login</button>
-        </mat-grid-tile>
-        
-      </mat-grid-list>
+  <div fxLayout="column" fxFlex="20" fxFlex.lt-lg="50" fxFlex.lt-md="80" fxLayoutAlign="center center"  class="box">
+
+    <div>
+      <h1><strong>Login</strong></h1>
+  
+    </div>
+
+
+    <div fxLayout="column"  fxLayoutAlign="center">
+      <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="text" [(ngModel)]="email" matInput> 
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input type="password" [(ngModel)]="pass" matInput>
+      </mat-form-field>
+    </div>
+
+
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px" >
+      <button fxLayout="column" fxFlex="10"  fxLayoutAlign="center center"  mat-flat-button color="accent" (click)="logear()">Login</button>
+      <button fxLayout="column" fxFlex="10"  fxLayoutAlign="center center"  mat-flat-button color="primary" (click)="registrar()">Register</button>
+    </div>
+
+  </div>
+
+   
+
+</div>
+  
+
+
+
+
 
 
     <!--crear pantalla de login-->

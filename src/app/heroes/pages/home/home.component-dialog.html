@@ -1,0 +1,15 @@
+<h1 mat-dialog-title><strong>Editar Perfil</strong> :</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Cambiar nombre de usuario</mat-label>
+    <input matInput [(ngModel)]="data.profile.usuario">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Cambiar contraseña</mat-label>
+    <input matInput [(ngModel)]="data.profile.password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onClick()" cdkFocusInitial>Ok</button>
+</div>

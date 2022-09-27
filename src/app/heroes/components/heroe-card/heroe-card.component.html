@@ -14,7 +14,7 @@
 
 
     <div fxLayout="column" fxLayoutGap="5px">
-      <button  mat-raised-button color="primary" [routerLink]="['/heroes',heroe.id]">Ver mas...</button>
+      <button *ngIf="detalles"  mat-raised-button color="primary" [routerLink]="['/heroes',heroe.id]">Ver mas...</button>
       <button mat-raised-button color="accent" [routerLink]="['/heroes/editar',heroe.id]">Editar</button>
     </div>
      

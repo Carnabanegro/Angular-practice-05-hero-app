@@ -9,6 +9,7 @@ import { Heroe } from '../../interfaces/heroe.interface';
 export class HeroeCardComponent implements OnInit {
 
   @Input() heroe : Heroe | undefined;
+  @Input() detalles : boolean | undefined;
 
   constructor() { }
 

@@ -12,6 +12,7 @@ import { HeroesService } from '../../services/heroes.service';
 export class HeroeComponent implements OnInit {
 
   heroe!: Heroe;
+  detalles: boolean = true;
 
   constructor(private activatedRoute : ActivatedRoute, private heroesService : HeroesService , private router : Router) { }
 
@@ -19,11 +20,12 @@ export class HeroeComponent implements OnInit {
 
     this.activatedRoute.params
     .pipe(
-      switchMap(({id}) => this.heroesService.getForId(id)),
-      tap(console.log)
-
+      switchMap(({id}) => this.heroesService.getForId(id))
    ) 
-   .subscribe(resp => this.heroe = resp);
+   .subscribe(resp => {
+    this.detalles=false;
+    this.heroe = resp
+   });
 
   }
 
